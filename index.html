@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HELOC Lender Finder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <ul class="tabs">
+            <li id="tab-lenders">Lenders</li>
+            <li id="tab-results">Results</li>
+            <li id="tab-glossary">Glossary</li>
+            <li id="tab-settings">Settings</li>
+            <li id="tab-share">Share</li>
+        </ul>
+    </nav>
+    <main>
+        <section id="lenders-section" class="tab-content">Lenders content here</section>
+        <section id="results-section" class="tab-content" style="display:none;">Results content here</section>
+        <section id="glossary-section" class="tab-content" style="display:none;">Glossary content here</section>
+        <section id="settings-section" class="tab-content" style="display:none;">Settings content here</section>
+        <section id="share-section" class="tab-content" style="display:none;">Share content here</section>
+    </main>
+    <div id="login-modal" style="display:none;">
+        <h2>Login</h2>
+        <input type="password" id="login-password" placeholder="Enter password">
+        <button onclick="login()">Login</button>
+    </div>
+    <script>
+    // Example database object
+    // 50 Credit Unions
+    // 50 Banks
+    // 50 Online Lenders
+    const lenderDB = [];
+    for (let i = 1; i <= 50; i++) {
+        lenderDB.push({
+            name: `Credit Union ${i}`,
+            type: 'Credit Union',
+            rating: +(4 + Math.random()).toFixed(1),
+            website: `https://cu${i}.com`,
+            about: 'Local credit union offering flexible HELOC options.',
+            contact: {
+                phone: `423-555-${1000 + i}`,
+                email: `info@cu${i}.com`,
+                officer: `Officer CU${i}`,
+                officerPhone: `423-555-${2000 + i}`,
+                officerEmail: `officer${i}@cu${i}.com`
+            },
+            applyLink: `https://cu${i}.com/apply-heloc`,
+            probability: 'High',
+            notes: 'Known for great customer service and flexible underwriting.',
+            questions: ['What is the minimum credit score?', 'Are there closing costs?'],
+            reviews: [
+                { date: '2025-07-01', text: 'Excellent service!', rating: 5 },
+                { date: '2025-06-15', text: 'Quick approval process.', rating: 4 },
+                { date: '2025-05-20', text: 'Friendly staff.', rating: 5 },
+                { date: '2025-04-10', text: 'Competitive rates.', rating: 4 },
+                { date: '2025-03-05', text: 'Easy online application.', rating: 5 }
+            ]
+        });
+    }
+    for (let i = 1; i <= 50; i++) {
+        lenderDB.push({
+            name: `Bank ${i}`,
+            type: 'Bank',
+            rating: +(3.5 + Math.random() * 1.5).toFixed(1),
+            website: `https://bank${i}.com`,
+            about: 'Regional bank with a variety of home equity products.',
+            contact: {
+                phone: `423-555-${3000 + i}`,
+                email: `contact@bank${i}.com`,
+                officer: `Officer Bank${i}`,
+                officerPhone: `423-555-${4000 + i}`,
+                officerEmail: `officer${i}@bank${i}.com`
+            },
+            applyLink: `https://bank${i}.com/apply-heloc`,
+            probability: 'Medium',
+            notes: 'Offers home equity loans and cash-out refis.',
+            questions: ['Is there a prepayment penalty?', 'What is the draw period?'],
+            reviews: [
+                { date: '2025-07-10', text: 'Good rates.', rating: 4 },
+                { date: '2025-06-20', text: 'Helpful loan officer.', rating: 5 },
+                { date: '2025-05-30', text: 'Application took a while.', rating: 3 },
+                { date: '2025-04-15', text: 'Clear communication.', rating: 4 },
+                { date: '2025-03-25', text: 'Would recommend.', rating: 5 }
+            ]
+        });
+    }
+    for (let i = 1; i <= 50; i++) {
+        lenderDB.push({
+            name: `Online Lender ${i}`,
+            type: 'Online Lender',
+            rating: +(3 + Math.random() * 2).toFixed(1),
+            website: `https://onlinelender${i}.com`,
+            about: 'Online lender specializing in fast HELOC approvals.',
+            contact: {
+                phone: `800-555-${5000 + i}`,
+                email: `support@onlinelender${i}.com`,
+                officer: `Officer OL${i}`,
+                officerPhone: `800-555-${6000 + i}`,
+                officerEmail: `officer${i}@onlinelender${i}.com`
+            },
+            applyLink: `https://onlinelender${i}.com/apply-heloc`,
+            probability: 'Medium',
+            notes: 'Known for quick online process.',
+            questions: ['How long does approval take?', 'Are rates fixed or variable?'],
+            reviews: [
+                { date: '2025-07-15', text: 'Fast approval.', rating: 4 },
+                { date: '2025-06-25', text: 'Rates could be better.', rating: 3 },
+                { date: '2025-05-10', text: 'Easy to use website.', rating: 4 },
+                { date: '2025-04-20', text: 'Customer service was okay.', rating: 3 },
+                { date: '2025-03-30', text: 'Would use again.', rating: 4 }
+            ]
+        });
+    }
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

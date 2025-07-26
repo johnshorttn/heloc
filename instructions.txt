@@ -1,0 +1,38 @@
+# Project Instructions
+
+## Project Details
+- [A website that lists the lenders for a heloc loan within a 50 mile radius of johnson city, tn. the site should have a few tabs at the top (Lenders, Results, Glossary, Settings and Share) the site will primarily be used on mobile devices, so it will need to be extremly mobile friendly.]
+
+## Tabs
+- **Lenders**: (Lists are expandable),
+    List format: Categories (credit unions, other lenders such as banks & mortgage specialists, online lenders.)
+    results title: "company name, rating"
+    results expanded: website with a short about description of the company, contact information with the loan officer's contact information if present, a link to apply for a heloc loan, probability of obtaining the loan based off of a credit score of 650+, notes about their options (such as offers home equite loans and cash-out refis, known for great customer service and flexible underwriting.) and list any important questions that we should ask about when applying, 5 recent reviews both good and bad with dates, 2 checkboxes (Applied and Skipped) and a notes box that can comment on.
+
+- **Results**: based off the 2 checkboxes on the lenders tab. if either checkbox is checked, they are shown here and removed from the lenders page(a separate rating system that just us use. this will be used to rate the lenders based on our own criteria, such as customer service, ease of application, etc.)
+    - Keep the Applied and skipped lenders in a separate list.
+    - Results format: Company name, our rating (1-5 stars), comments, additional questions we should ask the loan officer.
+    - Ability to sort results by rating, company name, and date applied.
+    - Ability to filter results by rating and lender type.
+
+- **Glossary**: (A glossary of terms related to heloc loans, such as "HELOC", "Equity", "Interest Rate", any documentation that would help educate us on the process, etc.)
+- **Settings**: (User preferences)
+    - Ability to set location (default to Johnson City, TN)
+    - Ability to set radius (default to 50 miles)
+    - option to export results to a CSV file
+    - Option to save favorite lenders
+    
+- **Share**: (Share results with others)
+    - Ability to share results via email or text message. (ability to share to phone contacts, email, sms, with a manual entry option for both.)
+
+- ** Login**: (hardcoded encrypted password "101324") 
+    - when logged in, the user can access the settings tab, share tab, and the ability to use the checkboxes.
+- **Logout**: (clears the session and returns to the lenders tab)
+
+
+## Additional Features
+- **the database is stored within the html file as a javascript object.**
+
+---
+
+*Edit this file to add more details as the project evolves.*
