@@ -37,9 +37,9 @@
     // 50 Credit Unions
     // 50 Banks
     // 50 Online Lenders
-    const lenderDB = [];
+    window.lenderDB = [];
     for (let i = 1; i <= 50; i++) {
-        lenderDB.push({
+        window.lenderDB.push({
             name: `Credit Union ${i}`,
             type: 'Credit Union',
             rating: +(4 + Math.random()).toFixed(1),
@@ -66,7 +66,7 @@
         });
     }
     for (let i = 1; i <= 50; i++) {
-        lenderDB.push({
+        window.lenderDB.push({
             name: `Bank ${i}`,
             type: 'Bank',
             rating: +(3.5 + Math.random() * 1.5).toFixed(1),
@@ -93,7 +93,7 @@
         });
     }
     for (let i = 1; i <= 50; i++) {
-        lenderDB.push({
+        window.lenderDB.push({
             name: `Online Lender ${i}`,
             type: 'Online Lender',
             rating: +(3 + Math.random() * 2).toFixed(1),
