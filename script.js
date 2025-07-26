@@ -51,7 +51,13 @@ function login() {
     const encrypted = btoa('101324'); // simple base64 for demo
     if (btoa(password) === encrypted) {
         document.getElementById('login-modal').style.display = 'none';
-        // Enable settings, share, checkboxes, etc.
+        // Switch to Lenders tab and render lenders
+        tabs.forEach(t => t.classList.remove('active'));
+        tabs[1].classList.add('active');
+        sections.forEach((sec, sidx) => {
+            sec.style.display = (sidx === 1) ? 'block' : 'none';
+        });
+        renderLenders();
     } else {
         alert('Incorrect password');
     }
@@ -60,14 +66,11 @@ function login() {
 // Show login modal on load
 window.onload = function() {
     document.getElementById('login-modal').style.display = 'flex';
-    // Default to login tab
+    // Default to Lenders tab
     tabs.forEach(t => t.classList.remove('active'));
-    tabs[0].classList.add('active');
+    tabs[1].classList.add('active');
     sections.forEach((sec, sidx) => {
-        sec.style.display = (sidx === 0) ? 'block' : 'none';
+        sec.style.display = (sidx === 1) ? 'block' : 'none';
     });
 };
 
-// Example database object
-const lenderDB = [
-// lenderDB is now defined in index.html
